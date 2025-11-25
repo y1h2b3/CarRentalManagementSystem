@@ -69,57 +69,57 @@ public class FileUtil {
      * @param line 要追加的内容
      * @return 追加成功返回true，否则返回false
      */
-    public static boolean appendLine(String filePath, String line) {
-        // 确保目录存在
-        File file = new File(filePath);
-        File parentDir = file.getParentFile();
-        if (parentDir != null && !parentDir.exists()) {
-            parentDir.mkdirs();
-        }
+    // public static boolean appendLine(String filePath, String line) {
+    //     // 确保目录存在
+    //     File file = new File(filePath);
+    //     File parentDir = file.getParentFile();
+    //     if (parentDir != null && !parentDir.exists()) {
+    //         parentDir.mkdirs();
+    //     }
         
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-            writer.write(line);
-            writer.newLine();
-            return true;
-        } catch (IOException e) {
-            System.err.println("追加内容到文件失败: " + filePath);
-            e.printStackTrace();
-            return false;
-        }
-    }
+    //     try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+    //         writer.write(line);
+    //         writer.newLine();
+    //         return true;
+    //     } catch (IOException e) {
+    //         System.err.println("追加内容到文件失败: " + filePath);
+    //         e.printStackTrace();
+    //         return false;
+    //     }
+    // }
     
     /**
      * 检查文件是否存在
      * @param filePath 文件路径
      * @return 文件存在返回true，否则返回false
      */
-    public static boolean fileExists(String filePath) {
-        return new File(filePath).exists();
-    }
+//     public static boolean fileExists(String filePath) {
+//         return new File(filePath).exists();
+//     }
     
-    /**
-     * 创建文件（如果不存在）
-     * @param filePath 文件路径
-     * @return 创建成功或文件已存在返回true，否则返回false
-     */
-    public static boolean createFile(String filePath) {
-        File file = new File(filePath);
-        if (file.exists()) {
-            return true;
-        }
+//     /**
+//      * 创建文件（如果不存在）
+//      * @param filePath 文件路径
+//      * @return 创建成功或文件已存在返回true，否则返回false
+//      */
+//     public static boolean createFile(String filePath) {
+//         File file = new File(filePath);
+//         if (file.exists()) {
+//             return true;
+//         }
         
-        // 确保目录存在
-        File parentDir = file.getParentFile();
-        if (parentDir != null && !parentDir.exists()) {
-            parentDir.mkdirs();
-        }
+//         // 确保目录存在
+//         File parentDir = file.getParentFile();
+//         if (parentDir != null && !parentDir.exists()) {
+//             parentDir.mkdirs();
+//         }
         
-        try {
-            return file.createNewFile();
-        } catch (IOException e) {
-            System.err.println("创建文件失败: " + filePath);
-            e.printStackTrace();
-            return false;
-        }
-    }
-}
+//         try {
+//             return file.createNewFile();
+//         } catch (IOException e) {
+//             System.err.println("创建文件失败: " + filePath);
+//             e.printStackTrace();
+//             return false;
+//         }
+//     }
+ }
