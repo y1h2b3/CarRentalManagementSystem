@@ -1,4 +1,4 @@
-package com.carrental.repository.impl;
+package com.carrental.repository.Impl;
 
 import com.carrental.model.User;
 import com.carrental.repository.UserRepository;

@@ -67,8 +67,21 @@ public class UserController {
      * 用户登出
      */
     public void logout() {
+        // 检查用户是否已经登出
+        if (currentUser == null) {
+            System.out.println("您尚未登录系统，无需登出。");
+            return;
+        }
+        
+        // 记录登出的用户名
+        String username = currentUser.getUsername();
+        
+        // 执行登出操作
         currentUser = null;
-        System.out.println("您已成功登出系统。");
+        
+        // 提供友好的用户反馈
+        System.out.println("尊敬的用户 " + username + "，您已成功登出系统。");
+        System.out.println("感谢您的使用，期待您再次登录！");
     }
 //
     /**

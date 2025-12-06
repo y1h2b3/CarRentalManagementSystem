@@ -1,4 +1,4 @@
-package com.carrental.service.impl;
+package com.carrental.service.Impl;
 
 import com.carrental.model.Vehicle;
 import com.carrental.repository.VehicleRepository;

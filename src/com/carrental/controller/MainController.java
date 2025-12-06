@@ -11,8 +11,8 @@ public class MainController {
     private RentalController rentalController;
     private UserController userController;
 
-    
-    
+
+
     // 构造函数，包含用户控制器
     public MainController(VehicleController vehicleController, CustomerController customerController, RentalController rentalController, UserController userController) {
         this.vehicleController = vehicleController;
@@ -33,6 +33,7 @@ public class MainController {
             if (userController != null) {
                 System.out.println("4. 用户管理");
             }
+            System.out.println("5. 退出登录");
             System.out.println("0. 退出系统");
 
             int choice = InputUtil.getInt("请选择功能模块: ");
@@ -54,6 +55,12 @@ public class MainController {
                         System.out.println("用户管理功能未启用！");
                     }
                     break;
+                case 5:
+                    // 退出登录
+                    if (userController != null) {
+                        userController.logout();
+                    }
+                    return; // 返回Main类，重新开始登录流程
                 case 0:
                     System.out.println("感谢使用汽车租赁管理系统，再见！");
                     InputUtil.close();
