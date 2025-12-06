@@ -64,6 +64,7 @@ public class MainController {
                 case 0:
                     System.out.println("感谢使用汽车租赁管理系统，再见！");
                     InputUtil.close();
+                    System.exit(0);
                     return;
                 default:
                     System.out.println("无效的选择，请重新输入！");
