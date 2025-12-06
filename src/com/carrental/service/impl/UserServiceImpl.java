@@ -71,18 +71,19 @@ public class UserServiceImpl implements UserService {
     }
     /**
      * 删除用户
-     * @param username 用户名
+     * @param currentUser 当前登录用户
+     * @param username 要删除的用户名
      * @return 删除成功返回true，否则返回false
      */
     @Override
-    public boolean deleteUser(String username) {
+    public boolean deleteUser(User currentUser, String username) {
         // 检查用户是否存在
         if (!userRepository.findByUsername(username).isPresent()) {
             return false;
         }
         
         // 删除用户
-        return userRepository.deleteUser(username);
+        return userRepository.deleteUser(currentUser, username);
     }
     /**
      * 查询所有用户

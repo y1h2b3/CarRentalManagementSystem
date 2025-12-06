@@ -34,10 +34,11 @@ public interface UserService {
     
     /**
      * 删除用户
-     * @param username 用户名
+     * @param currentUser 当前登录用户
+     * @param username 要删除的用户名
      * @return 删除成功返回true，否则返回false
      */
-    boolean deleteUser(String username);
+    boolean deleteUser(User currentUser, String username);
 
     /**
      * 查询所有用户

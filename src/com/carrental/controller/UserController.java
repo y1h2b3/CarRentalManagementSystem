@@ -62,7 +62,7 @@ public class UserController {
     public User getCurrentUser() {
         return currentUser;
     }
-    
+
     /**
      * 用户登出
      */
@@ -70,7 +70,7 @@ public class UserController {
         currentUser = null;
         System.out.println("您已成功登出系统。");
     }
-    
+//
     /**
      * 显示用户管理菜单（管理员功能）
      */
@@ -223,7 +223,7 @@ public class UserController {
         String confirm = scanner.nextLine().trim().toLowerCase();
         
         if ("y".equals(confirm)) {
-            if (userService.deleteUser(username)) {
+            if (userService.deleteUser(currentUser, username)) {
                 System.out.println("用户删除成功！");
             } else {
                 System.out.println("用户删除失败！");
