@@ -77,7 +77,7 @@ public class RentalController {
     private void rentVehicle() {
         System.out.println("\n===== 租车 =====");
 
-        String type=InputUtil.getString("选择要租的车型（轿车，面包车，巴士，客车）：");
+        String type=InputUtil.getString("选择要租的车型（轿车，面包车，客车）：");
 
         // 先显示可租赁车辆
         if(vehicleController.findAvailableVehiclesByType(type)) {

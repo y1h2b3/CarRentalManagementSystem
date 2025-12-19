@@ -76,7 +76,7 @@ public class VehicleRepositoryFileImpl implements VehicleRepository {
         
         // 添加一些示例巴士
         Bus bus1 = new Bus();
-        bus1.setType("巴士");
+        bus1.setType("客车");
         bus1.setBrand("宇通");
         bus1.setModel("ZK6122HQ");
         bus1.setDailyRent(500);
@@ -84,7 +84,7 @@ public class VehicleRepositoryFileImpl implements VehicleRepository {
         addVehicle(bus1);
         
         Bus bus2 = new Bus();
-        bus2.setType("巴士");
+        bus2.setType("客车");
         bus2.setBrand("金龙");
         bus2.setModel("XMQ6118AY");
         bus2.setDailyRent(450);
@@ -158,7 +158,7 @@ public class VehicleRepositoryFileImpl implements VehicleRepository {
      */
     @Override
     public List<Vehicle> findAllVehicles() {
-        return new ArrayList<>(vehicles);
+        return new ArrayList<>(vehicles);//拷贝
     }
 
     /**
